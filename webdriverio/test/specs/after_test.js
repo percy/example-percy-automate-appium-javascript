@@ -4,7 +4,6 @@ describe('Test on bstack demo', () => {
   it('add products to cart', async () => {
     await browser.url("https://bstackdemo.com/");
     // Important step to set width and heigh of browser
-    await browser.setWindowSize(1280, 1024);
 
     await browser.waitUntil(async () => (await browser.getTitle()).match(/StackDemo/i), 10000);
 
@@ -34,7 +33,7 @@ describe('Test on bstack demo', () => {
     // Percy Screenshot 2
     // take percy_screenshot using the following command
     await percyScreenshot(driver, 'screenshot_2');
-
+ 
     // checking whether the product has been added to the cart by comparing product names
     expect(productText).toBe(productCartText);
   }, 10000000);

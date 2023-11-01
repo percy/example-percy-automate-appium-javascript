@@ -20,7 +20,7 @@ exports.config = {
   // in via the `region` property. Available short handles for regions are `us` (default), `eu` and `apac`.
   // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
   // If you don't provide the region it will default for the `us`
-  
+
   //
   // ==================
   // Specify Test Files
@@ -38,11 +38,11 @@ exports.config = {
   // will be called from there.
   //
   specs: [
-      './test/specs/**/*.js'
+    './test/specs/**/*.js'
   ],
   // Patterns to exclude.
   exclude: [
-      // 'path/to/excluded/files'
+    // 'path/to/excluded/files'
   ],
   //
   // ============
@@ -77,20 +77,23 @@ exports.config = {
   //   browserName: 'chrome'
   // }
   capabilities: [{
-      'bstack:options': {
-        deviceName: 'Samsung Galaxy S23 ultra',        
-        resolution: '2048x1536',
-        local: 'false'
-      }
-    },{
-      'bstack:options': {
-        os: 'OS X',
-        osVersion: 'Big Sur',
-        browserVersion: 'latest',
-        local: 'false',
+    'bstack:options' : {
+      osVersion : "12.0",
+      deviceName : "Samsung Galaxy S22 Ultra",
+      local : "false",
+      deviceOrientation : "landscape",
       },
-      browserName: 'Safari'
-    }],
+    browserName : "chrome" 
+  },
+  {
+    'bstack:options': {
+      osVersion: "16",
+      deviceName: "iPhone 14",
+      local: "false",
+      deviceOrientation: "landscape"
+    },
+    browserName: "safari",
+  }],
 
   //
   // ===================
@@ -163,13 +166,13 @@ exports.config = {
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: ['spec'],
 
-  
+
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
-      ui: 'bdd',
-      timeout: 60000
+    ui: 'bdd',
+    timeout: 60000
   },
   //
   // =====

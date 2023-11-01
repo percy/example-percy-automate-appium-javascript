@@ -1,4 +1,4 @@
-const percyScreenshot = require('@percy/appim-app');
+const percyScreenshot = require('@percy/appium-app');
 
 describe('Test on bstack demo', () => {
   it('add products to cart', async () => {
