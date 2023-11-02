@@ -30,7 +30,7 @@ const driver = wd.promiseRemote('https://hub-cloud.browserstack.com/wd/hub');
 
     const tabBtn = await driver.elementByXPath('//*[@id="__next"]/div/div/main/div[1]/div[2]/label/span')
     tabBtn.click()
-    
+
     // [percy note: important step]
     // Percy Screenshot 1
     // take percyScreenshot using the following command
@@ -38,18 +38,27 @@ const driver = wd.promiseRemote('https://hub-cloud.browserstack.com/wd/hub');
 
     await driver.waitForElementByXPath('//*[@id="10"]/p', wd.asserters.isDisplayed);
     const productCard  = await driver.elementByXPath('//*[@id="10"]/p')
-    await productCard.text()
+    const productText = await productCard.text()
     const addToCartBtn = await driver.elementByXPath('//*[@id="10"]/div[4]')
     addToCartBtn.click()
     await driver.waitForElementByClassName("float-cart__content", wd.asserters.isDisplayed);
     await driver.elementByClassName("float-cart__content");
-    
+    const floatingCart = await driver.elementByXPath('//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]')
+    const productCartText = await floatingCart.text()
+
     // [percy note: important step]
     // Percy Screenshot 1
     // take percyScreenshot using the following command
-    await percyScreenshot(driver, 'screenshot_2'); 
+    await percyScreenshot(driver, 'screenshot_2');
+    
+    if (productCartText === productText) {
+      driver.execute('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason":"' + "Galaxy S20 has been successfully added to the cart!" + '"}}');
+    } else {
+      driver.execute('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason":"' + "Galaxy S20 not been added" + '"}}');
+    }
   } catch (error) {
     console.error('Error occurred:', error);
+    driver.execute('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason":"' + error.toString() + '"}}');
   } finally {
     // Quit the driver
     await driver.quit();
