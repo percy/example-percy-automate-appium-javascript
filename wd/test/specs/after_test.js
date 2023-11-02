@@ -47,7 +47,7 @@ const driver = wd.promiseRemote('https://hub-cloud.browserstack.com/wd/hub');
     const productCartText = await floatingCart.text()
 
     // [percy note: important step]
-    // Percy Screenshot 1
+    // Percy Screenshot 2
     // take percyScreenshot using the following command
     await percyScreenshot(driver, 'screenshot_2');
     
