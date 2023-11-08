@@ -9,7 +9,7 @@ be able to follow along if you're not familiar with Javascript, Webdriverio, but
 spend time introducing Javascript, Webdriverio concepts.
 This particular example uses Mocha framework to write tests, we assume that you have basic understanding for the same.
 
-The tutorial also assumes you have [Node 14.20+ with
+The tutorial also assumes you have [Node 17.0.0+ with
 npm](https://nodejs.org/en/download/) and
 [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed.
 
