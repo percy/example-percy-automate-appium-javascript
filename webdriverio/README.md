@@ -94,6 +94,17 @@ Considering all the above steps are done, we will run our tests, which will crea
 $ npx percy exec -- npm run base
 ```
 
+### NOTE
+In case it give error: 
+```
+sh: wdio: command not found
+```
+inside package.json replace `scripts` with below commands
+```
+ "base": "npx wdio run ./wdio.conf.js --spec ./test/specs/test.js",
+ "head": "npx wdio run ./wdio.conf.js --spec ./test/specs/after_test.js"
+```
+
 Your **First Percy on Automate** build is created.
 On completion of the script, you would be able to see the your percy build. Since we ran for the first time, we would see these are new screenshots and hence there would be no comparisons.
 
