@@ -5,17 +5,18 @@ const desiredCaps = {
   // Set BStack options that would allow 
   'bstack:options': {
     "userName" : process.env.BROWSERSTACK_USERNAME,
-    "accessKey" : process.env.BROWSERSTACK_ACCESS_KEY,
+    "accessKey" : process.env.BROWSERSTACK_ACCESS_KEY
   },
 
   // Specify device and os_version for testing
-  device: 'Samsung Galaxy S22 Ultra',
+  device: 'Samsung Galaxy S22',
   os_version: '12',
+  realMobile: true,
 
   // Set other BrowserStack capabilities
-  project: 'First Percy Automate wd Project',
-  build: 'wd Android',
-  name: 'first_visual_test'
+  project: 'My Project',
+  build: 'Appium Percy JS',
+  name: 'POA JS session'
 };
 
 // Initialize the remote Webdriver using BrowserStack remote URL

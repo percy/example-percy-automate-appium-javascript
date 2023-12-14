@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "@percy/appium-app": "^2.0.2",
-    "wd": "^1.14.0",
-    "@percy/cli": "^1.27.3"
+    "wd": "^1.14.0"
   },
   "scripts": {
     "base": "node ./test/specs/test.js",
