@@ -9,14 +9,14 @@ const desiredCaps = {
   },
 
   // Specify device and os_version for testing
-  device: 'Samsung Galaxy S22',
-  os_version: '12',
+  device: 'Samsung Galaxy S22 Plus',
+  os_version: '12.0',
   realMobile: true,
 
   // Set other BrowserStack capabilities
-  project: 'My Project',
-  build: 'Appium Percy JS',
-  name: 'POA JS session'
+  project: 'Percy',
+  build: 'Appium-SDKs',
+  name: 'js-andorid'
 };
 
 // Initialize the remote Webdriver using BrowserStack remote URL
