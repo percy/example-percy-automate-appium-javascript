@@ -10,7 +10,7 @@
     "head": "wdio run ./wdio.conf.js --spec ./test/specs/after_test.js"
   },
   "dependencies": {
-    "@percy/appium-app": "^2.0.2",
-    "@percy/cli": "^1.27.3"
+    "@percy/appium-app": "^2.1.0",
+    "@percy/cli": "^1.30.11"
   }
 }
