@@ -2,7 +2,8 @@
   "name": "example-percy-automate-appium-js-wdio-advanced",
   "private": true,
   "scripts": {
-    "test:advanced": "wdio advanced.conf.js"
+    "test:advanced": "wdio advanced.conf.js",
+    "test:percy": "bash -o pipefail -c 'percy exec -- npm run test:advanced 2>&1 | tee percy-run.log' && ! grep -qE 'Could not take|: Error - ' percy-run.log || (echo 'Percy reported capture errors (see percy-run.log)' && exit 1)"
   },
   "dependencies": {
     "@percy/appium-app": "^2.1.0",
