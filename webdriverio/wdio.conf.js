@@ -80,7 +80,8 @@ exports.config = {
     'bstack:options' : {
       osVersion : "12.0",
       deviceName : "Samsung Galaxy S22 Ultra",
-      local : "false"
+      local : "false",
+      appiumVersion : process.env.APPIUM_VERSION || "2.19.0"
       },
     browserName : "chrome" 
   },
@@ -88,7 +89,8 @@ exports.config = {
     'bstack:options': {
       osVersion: "16",
       deviceName: "iPhone 14",
-      local: "false"
+      local: "false",
+      appiumVersion: process.env.APPIUM_VERSION || "2.19.0"
     },
     browserName: "safari",
   }],
