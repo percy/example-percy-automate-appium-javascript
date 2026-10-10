@@ -2,7 +2,8 @@
   "name": "example-percy-automate-appium-js-wdio-advanced",
   "private": true,
   "scripts": {
-    "test:advanced": "wdio advanced.conf.js"
+    "test:advanced": "wdio advanced.conf.js",
+    "test:percy": "bash run-percy.sh"
   },
   "dependencies": {
     "@percy/appium-app": "^2.1.0",
