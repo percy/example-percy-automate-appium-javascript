@@ -4,7 +4,7 @@ Exercises the full applicable Percy on Automate feature surface for `@percy/appi
 on a mobile-browser session (Chrome on a real Android device). Native apps use App Percy
 instead — the CLI's Automate capture needs a browser (JavaScript) context.
 
-8 mocha `it` blocks in `specs/advanced.test.js`: device_name + orientation, fullscreen + bars, ignore regions (xpath / custom bbox), consider regions via xpath, sync mode, test_case + labels.
+8 mocha `it` blocks in `specs/advanced.test.js`: baseline screenshot, full_page, ignore regions (xpath / selector / custom bbox), consider regions via xpath, sync mode, test_case + labels.
 
 Web-only options marked `N/A` in `matrix.yml`.
 

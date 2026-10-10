@@ -21,7 +21,7 @@ if [ "$percy_status" != "0" ]; then
   echo "percy exec failed (exit status: $percy_status)"
   exit 1
 fi
-if grep -qE 'Could not take|Could not post screenshot|Error taking screenshot|failed to take screenshot|Percy is not running|percy is disabled|: Error -' percy-run.log; then
+if grep -qiE 'Could not take|Could not post screenshot|Error taking screenshot|failed to take screenshot|Percy is not running|percy is disabled|: Error -' percy-run.log; then
   echo "Percy reported capture errors (see percy-run.log)"
   exit 1
 fi
