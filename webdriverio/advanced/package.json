@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "test:advanced": "wdio advanced.conf.js",
-    "test:percy": "bash -o pipefail -c 'percy exec -- npm run test:advanced 2>&1 | tee percy-run.log' && ! grep -qE 'Could not take|Could not post screenshot|Error taking screenshot|failed to take screenshot|Percy is not running|percy is disabled|: Error -' percy-run.log || (echo 'Percy reported capture errors (see percy-run.log)' && exit 1)"
+    "test:percy": "bash run-percy.sh"
   },
   "dependencies": {
     "@percy/appium-app": "^2.1.0",
